@@ -1,0 +1,118 @@
+@use "../common/variables.scss" as v;
+@use "../mixins/media.scss" as m;
+
+.footer {
+  background-color: v.$color-background;
+}
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include m.tablet {
+    display: grid;
+    padding-top: 34px;
+    padding-bottom: 32px;
+    grid-template-columns: 143px 142px 1fr;
+    gap: 84px;
+  }
+
+  @include m.desktop {
+    display: grid;
+    grid-template-columns: 315px 142px 393px;
+    gap: 100px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+
+
+.footer__link {
+  display: none;
+
+  @include m.tablet {
+    display: block;
+  }
+}
+
+.footer__logo {
+  color: v.$color-title;
+}
+
+.footer__socials-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 34px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include m.tablet {
+    justify-self: center;
+    padding-top: 25px;
+    width: 145px;
+    gap: 32px;
+  }
+}
+
+.footer__social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$color-title;
+}
+
+.footer__developer {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+
+  @include m.tablet {
+    border: none;
+    justify-content: flex-end;
+    padding-top: 15px;
+  }
+
+  @include m.desktop {
+    padding-top: 10px;
+    padding-bottom: 19px;
+    gap: 29px;
+  }
+}
+
+.footer__developer-icon {
+  color: v.$color-primary;
+}
+
+.footer__developer-name {
+  color: v.$color-title;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.footer__link:hover .footer__logo,
+.footer__link:focus .footer__logo,
+.footer__social-link:hover .footer__social-icon,
+.footer__social-link:focus .footer__social-icon,
+.footer__developer:hover .footer__developer-icon,
+.footer__developer:focus .footer__developer-icon {
+  color: #46c1ae;
+}
+
+.footer__link:active .footer__logo,
+.footer__social-link:active .footer__social-icon,
+.footer__developer:active .footer__developer-icon {
+  opacity: 0.3;
+}

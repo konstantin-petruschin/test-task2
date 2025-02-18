@@ -1,0 +1,107 @@
+@use "../common/variables.scss" as v;
+@use "../mixins/media.scss" as m;
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 20;
+
+  &--open {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.modal__container {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 5px 10px 0 rgba(0, 1, 1, 0.25);
+  padding: 28px 30px 47px;
+  z-index: 20;
+
+  @include m.tablet {
+    max-width: 566px;
+    padding: 38px 105px 46px;
+  }
+}
+
+.modal__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 18px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  color: v.$color-title;
+  text-transform: uppercase;
+
+  @include m.tablet {
+    font-size: 30px;
+    line-height: 57px;
+    margin-bottom: 11px;
+  }
+}
+
+.modal__text {
+  margin-bottom: 22px;
+
+  @include m.tablet {
+    margin-bottom: 20px;
+  }
+}
+
+.modal__form {
+  width: 100%;
+}
+
+.modal__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-bottom: 31px;
+
+  @include m.tablet {
+    margin-bottom: 29px;
+  }
+}
+
+.modal__label {
+  display: flex;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  border: 2px solid rgba(v.$color-text, $alpha: 0.1);
+  padding: 14px 7px;
+  font-weight: 700;
+
+  @include m.tablet {
+    padding: 10px;
+  }
+}
+
+.modal__input:checked + .modal__label {
+  border-color: v.$color-primary;
+}
+
+.modal__button {
+  width: 100%;
+  font-size: 17px;
+}

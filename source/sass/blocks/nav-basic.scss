@@ -1,0 +1,36 @@
+@use "../common/variables.scss" as v;
+@use "../mixins/media.scss" as m;
+
+.nav-basic {
+  display: flex;
+  flex-direction: column;
+
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+.nav-basic__link {
+  @include m.tablet {
+    font-size: 15px;
+    padding: 22px 14px 22px 24px;
+  }
+
+  @include m.desktop {
+    font-size: 17px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 33px;
+  }
+
+  &:nth-child(odd) {
+    @include m.tablet {
+      padding-left: 0;
+    }
+
+    @include m.desktop {
+      border-right: 1px solid rgba(v.$color-title, $alpha: 0.1);
+    }
+  }
+}
