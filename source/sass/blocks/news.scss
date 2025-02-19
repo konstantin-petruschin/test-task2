@@ -1,7 +1,7 @@
 @use "../common/variables.scss" as v;
 @use "../mixins/media.scss" as m;
 
-.video-block__card {
+.news__card {
   border: 1px solid v.$color-border;
   padding-top: 21px;
   padding-bottom: 33px;
@@ -30,7 +30,7 @@
   }
 }
 
-.video-block__name {
+.news__name {
   order: 1;
   display: flex;
   gap: 25px;
@@ -73,7 +73,7 @@
   }
 }
 
-.video-block__wrapper {
+.news__wrapper {
   order: 2;
   position: relative;
   margin-bottom: 35px;
@@ -92,13 +92,13 @@
   }
 }
 
-.video-block__img {
+.news__img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.video-block__play {
+.news__play {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -125,7 +125,7 @@
   }
 }
 
-.video-block__bottom {
+.news__bottom {
   padding-left: 32px;
   padding-right: 32px;
   order: 3;
@@ -142,7 +142,7 @@
   }
 }
 
-.video-block__text {
+.news__text {
   margin: 0;
   padding: 0;
   margin-bottom: 40px;

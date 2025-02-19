@@ -37,7 +37,7 @@
 }
 
 .footer__logo {
-  color: v.$color-title;
+  color: v.$color-shadow;
 }
 
 .footer__socials-list {
@@ -64,7 +64,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: v.$color-title;
+  color: v.$color-shadow;
 }
 
 .footer__developer {
@@ -97,7 +97,7 @@
 }
 
 .footer__developer-name {
-  color: v.$color-title;
+  color: v.$color-shadow;
   font-size: 19px;
   font-weight: 700;
 }
