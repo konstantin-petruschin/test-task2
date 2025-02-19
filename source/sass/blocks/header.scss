@@ -1,14 +1,14 @@
 @use "../common/variables.scss" as v;
 @use "../mixins/media.scss" as m;
 
-.main-header {
+.header {
   position: relative;
   min-height: 79px;
   padding-top: 22px;
   padding-bottom: 16px;
   border-bottom: 1px solid v.$color-border;
-  display: flex;
-  flex-direction: column;
+  background-color: rgba(v.$basic-white, $alpha: 0.9);
+
 
   @include m.tablet {
     border: none;
@@ -29,26 +29,26 @@
 
   @include m.tablet {
     &::after {
-      bottom: 68px;
+      bottom: 0;
     }
   }
 }
 
-.main-header__logo {
-  align-self: center;
-
-  @include m.tablet {
-    position: absolute;
-    left: 50px;
-    top: 22px;
-    z-index: 20;
-  }
+.header__container {
+  display: flex;
+  flex-direction: column;
 
   @include m.desktop {
-    left: 50%;
-    top: 9px;
-    transform: translateX(-50%);
+    padding: 12px 40px 8px 35px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: v.$desktop;
   }
+}
+
+.header__logo {
+  align-self: center;
 
   &:hover[href],
   &:focus {
@@ -58,6 +58,11 @@
 
   &:active[href] {
     opacity: 0.3;
+  }
+
+
+  @include m.desktop {
+    align-self: center;
   }
 }
 
@@ -84,6 +89,37 @@
     display: none;
   }
 }
+
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include m.desktop {
+    flex-direction: row;
+  }
+}
+
+.header__nav-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include m.desktop {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+.header__nav-link {
+  padding: 30px 2px;
+}
+
+
+
 
 .no-js {
   .main-header__toggle {
