@@ -1,57 +1,50 @@
 @use "../common/variables.scss" as v;
 @use "../mixins/media.scss" as m;
 
-.news__card {
-  border: 1px solid v.$color-border;
-  padding-top: 21px;
-  padding-bottom: 33px;
-  display: flex;
-  flex-direction: column;
 
-  @include m.tablet {
-    padding-top: 0;
-    padding-bottom: 44px;
-  }
+.news {
+  padding: 45px 10px 75px 60px;
+}
 
-  @include m.desktop {
-    display: grid;
-    padding: 0;
-    grid-template-columns: 682px 230px;
-    grid-template-rows: minmax(57px, auto) minmax(283px, auto);
-    column-gap: 79px;
-  }
+.news__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-  &:hover {
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-  }
+.news__item {
+  display: grid;
+  grid-template-columns: 200px auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 75px;
+  font-weight: 300;
 
-  &:active {
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
+.news__link {
+  text-decoration: none;
+  display: block;
+  color: v.$color-text;
+}
+
+.news__image {
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
 .news__name {
-  order: 1;
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  font-size: 17px;
-  line-height: 24px;
-  font-weight: 700;
+  font-size: 27px;
+  line-height: 32px;
+  font-weight: 300;
   padding: 0;
   margin: 0;
-  margin-bottom: 27px;
+  margin-bottom: 20px;
   text-align: left;
-  padding-left: 32px;
-
-  &::before {
-    content: "";
-    background-image: url("../img/icons/video-icon.svg");
-    background-repeat: no-repeat;
-    display: block;
-    width: 40px;
-    height: 22px;
-  }
 
   @include m.tablet {
     margin-bottom: 25px;
@@ -62,96 +55,19 @@
   }
 
   @include m.desktop {
-    flex-direction: column;
-    align-items: flex-start;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    font-size: 27px;
+    line-height: 32px;
+    font-weight: 300;
     padding: 0;
-    padding-top: 45px;
-    gap: 28px;
-    margin-bottom: 28px;
-  }
-}
-
-.news__wrapper {
-  order: 2;
-  position: relative;
-  margin-bottom: 35px;
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-
-  @include m.tablet {
-    margin-bottom: 40px;
-    border-bottom: 1px solid v.$color-border;
-    order: 1;
-  }
-
-  @include m.desktop {
-    border: none;
     margin: 0;
-  }
-}
-
-.news__img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.news__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  width: 101px;
-  height: 77px;
-  background-color: transparent;
-  background-image: url("../img/icons/play.svg");
-  background-repeat: no-repeat;
-  background-size: auto;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.2) translate(-40%, -40%);
-    transition: 0.3s;
-  }
-
-  &:active {
-    opacity: 0.3;
-    transform: scale(0.8) translate(-60%, -60%);
-    transition: 0.3s;
-  }
-}
-
-.news__bottom {
-  padding-left: 32px;
-  padding-right: 32px;
-  order: 3;
-
-  @include m.tablet {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  @include m.desktop {
-    padding: 0;
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    margin-bottom: 20px;
+    text-align: left;
   }
 }
 
 .news__text {
   margin: 0;
   padding: 0;
-  margin-bottom: 40px;
-
-  @include m.tablet {
-    font-size: 15px;
-  }
-
-  @include m.desktop {
-    margin-bottom: 51px;
-  }
+  max-width: 800px;
+  color: v.$color-news;
 }
