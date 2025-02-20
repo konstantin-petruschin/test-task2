@@ -6,8 +6,8 @@
   top: 0;
   left: 0;
   min-height: 79px;
-  padding-top: 22px;
-  padding-bottom: 16px;
+  padding-top: 26px;
+  padding-bottom: 17px;
   box-shadow: 0 2px 5px rgba(v.$color-shadow, $alpha: 0.2);
   background-color: rgba(v.$basic-white, $alpha: 0.9);
   z-index: 20;
@@ -24,7 +24,7 @@
   flex-direction: column;
 
   @include m.desktop {
-    padding: 0 40px 0 35px; //     padding: 12px 40px 8px 35px;
+    padding: 0 46px 0 38px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -82,7 +82,7 @@
 
   @include m.desktop {
     flex-direction: row;
-    gap: 0 20px;
+    gap: 0 33px;
   }
 }
 
@@ -97,7 +97,13 @@
   @include m.desktop {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 26px;
+  }
+}
+
+.header__nav-item {
+  &:first-child {
+    margin-right: 5px;
   }
 }
 
@@ -105,9 +111,14 @@
   padding: 30px 2px;
   text-decoration: none;
   color: v.$color-links;
+  font-size: 17px;
 
   &:hover {
     color: v.$color-hover;
+  }
+
+  &:active {
+    color: v.$color-orange;
   }
 }
 
@@ -123,16 +134,21 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 7px;
-  padding: 6px 25px;
+  gap: 8px;
+  padding: 2px 13px 4px 14px;
   background-color: v.$color-button;
   border-radius: 5px;
+  font-size: 16px;
   color: v.$basic-white;
   text-decoration: none;
   transition: scale 0.3s ease;
 
   &:hover {
     scale: 1.1;
+  }
+
+  &:active {
+    background-color: v.$color-orange;
   }
 
   &::before {
@@ -142,6 +158,7 @@
     height: 14px;
     background-image: url("../img/icons/user.svg");
     background-repeat: no-repeat;
+    margin-top: 3px;
   }
 }
 

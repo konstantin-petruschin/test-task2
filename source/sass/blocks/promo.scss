@@ -10,6 +10,7 @@
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 0 72px;
   margin-top: -178px;
 
   @include m.desktop {
@@ -25,31 +26,33 @@
     background-repeat: no-repeat;
     top: 50%;
     left: 50%;
+    transform: translate(-48%, -13%);
   }
 }
 
 .promo__container {
-  padding: 410px 40px 40px 35px;
+  padding: 500px 40px 85px 35px;
   text-align: center;
   color: v.$basic-white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .promo__heading {
-  margin: 0;
+  margin: 0 51px 20px 0;
   padding: 0;
-  margin-bottom: 10px;
-  font-size: 48px;
+  font-size: 68px;
   font-weight: 300;
   line-height: 50px;
   text-transform: uppercase;
 }
 
 .promo__subtitle {
-  margin: 0;
+  margin: 0 0 0 70px;
   padding: 0;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 23px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  word-spacing: 0.4px;
 }
 
 .promo__text {
