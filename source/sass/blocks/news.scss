@@ -5,6 +5,10 @@
 .news {
   padding: 20px;
 
+  @include m.tablet {
+    padding: 50px 20px;
+  }
+
   @include m.desktop {
     padding: 44px 0 75px 65px;
   }
@@ -18,6 +22,10 @@
 
 .news__item {
   margin-bottom: 20px;
+
+  @include m.tablet {
+    margin-bottom: 30px;
+  }
 
   @include m.desktop {
     margin-bottom: 75px;
@@ -48,6 +56,13 @@
     color: v.$color-orange;
   }
 
+
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: 200px auto;
+    gap: 20px;
+  }
+
   @include m.desktop {
     display: grid;
     grid-template-columns: 200px auto;
@@ -61,14 +76,21 @@
   height: auto;
   margin-bottom: 20px;
 
-  @include m.desktop {
-    margin-bottom: 0;
+  @include m.tablet {
     width: 200px;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  @include m.desktop {
+    margin-top: 0;
   }
 }
 
 .news__description {
-  padding: 3px 0;
+  @include m.desktop {
+    padding: 3px 0;
+  }
 }
 
 .news__name {
@@ -79,9 +101,6 @@
   margin: 0;
   margin-bottom: 10px;
   text-align: left;
-
-  @include m.tablet {
-  }
 
   @include m.desktop {
     font-size: 27px;

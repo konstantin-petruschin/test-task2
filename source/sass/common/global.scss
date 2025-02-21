@@ -25,14 +25,14 @@ img {
 }
 
 .container {
-  max-width: v.$phone;
+  min-width: v.$phone;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
 
   @include m.tablet {
-    max-width: v.$tablet;
+    min-width: v.$tablet;
   }
 
   @include m.desktop {
