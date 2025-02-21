@@ -8,6 +8,7 @@
 .features__container {
   text-align: center;
   padding-top: 30px;
+  padding-bottom: 30px;
 
   @include m.desktop {
     padding: 57px 43px 52px 35px;
