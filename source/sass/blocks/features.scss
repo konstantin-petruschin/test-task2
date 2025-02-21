@@ -6,37 +6,50 @@
 }
 
 .features__container {
-  padding: 57px 43px 52px 35px;
   text-align: center;
+  padding-top: 30px;
+
+  @include m.desktop {
+    padding: 57px 43px 52px 35px;
+  }
 }
 
 .features__heading {
   padding: 0;
-  margin: 0 0 20px 19px;
-  font-size: 35px;
-  line-height: 38px;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 23px;
+  line-height: 25px;
   font-weight: 300;
-  margin-bottom: 18px;
+  text-wrap: balance;
+
+  @include m.desktop {
+    margin: 0 0 18px 19px;
+    font-size: 35px;
+    line-height: 38px;
+  }
 }
 
 .features__text {
   padding: 0;
-  margin: 0 auto 85px;
-  font-size: 17px;
-  max-width: 830px;
-  line-height: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+
+  @include m.desktop {
+    margin: 0 auto 85px;
+    font-size: 17px;
+    max-width: 830px;
+    line-height: 20px;
+  }
 }
 
 .features__list {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-direction: column;
-
-  @include m.tablet {
-
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 
   @include m.desktop {
     display: grid;
@@ -55,10 +68,10 @@
   border-radius: 50%;
   text-decoration: none;
   color: v.$basic-white;
-  width: 180px;
-  height: 180px;
-  padding: 44px 23px 27px;
-  font-size: 16px;
+  width: 130px;
+  height: 130px;
+  padding: 20px;
+  font-size: 14px;
 
   &--tickets {
     background-color: v.$color-blue;
@@ -75,6 +88,13 @@
   &--devices {
     background-color: v.$color-orange;
   }
+
+  @include m.desktop {
+    width: 180px;
+    height: 180px;
+    padding: 44px 23px 27px;
+    font-size: 16px;
+  }
 }
 
 .features__description {
@@ -83,15 +103,27 @@
   transition: opacity 0.3s ease;
   height: 0;
   overflow: hidden;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin: 0;
+  padding: 0;
+
+  @include m.desktop {
+    max-width: 135px;
+  }
 }
 
 .features__icon,
 .features__name {
   transition: filter 0.3s ease;
+}
+
+
+.features__icon {
+  width: 47px;
+  height: auto;
+
+  @include m.desktop {
+    width: auto;
+  }
 }
 
 .features__link:hover .features__icon,
@@ -102,8 +134,8 @@
 .features__link:hover .features__description {
   opacity: 1;
   height: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: -5px;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -126,13 +158,3 @@
   }
 }
 
-.no-js {
-  .main-nav {
-    display: flex;
-    position: static;
-
-    @include m.tablet {
-      display: grid;
-    }
-  }
-}

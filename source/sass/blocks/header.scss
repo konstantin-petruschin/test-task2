@@ -5,9 +5,6 @@
   position: sticky;
   top: 0;
   left: 0;
-  min-height: 79px;
-  padding-top: 26px;
-  padding-bottom: 17px;
   box-shadow: 0 2px 5px rgba(v.$color-shadow, $alpha: 0.2);
   background-color: rgba(v.$basic-white, $alpha: 0.9);
   z-index: 20;
@@ -17,57 +14,62 @@
       bottom: 0;
     }
   }
+
+  @include m.desktop {
+    min-height: 79px;
+    padding-top: 26px;
+    padding-bottom: 17px;
+  }
 }
 
 .header__container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 7px;
 
   @include m.desktop {
-    padding: 0 46px 0 38px;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    padding: 0 46px 0 38px;
     max-width: v.$desktop;
   }
 }
 
 .header__logo {
-  align-self: center;
+  width: 120px;
+  height: auto;
 
   &:hover[href],
   &:focus {
-    opacity: 0.6;
+    scale: 1.1;
     outline: none;
   }
 
   &:active[href] {
-    opacity: 0.3;
+    opacity: 0.6;
   }
 
 
   @include m.desktop {
+    width: 187px;
     align-self: center;
+    transition: scale 0.3s ease;
   }
 }
 
-.main-header__toggle {
-  position: absolute;
+.header__toggle {
   border: none;
-  width: 20px;
-  height: 14px;
-  top: 32px;
-  right: 31px;
-  background-image: url("../img/icons/menu.svg");
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/icons/burger.svg");
   background-color: transparent;
   background-repeat: no-repeat;
-  z-index: 10;
 
   &--closed {
-    background-image: url("../img/icons/menu-close.svg");
-    width: 21px;
-    height: 20px;
-    top: 29px;
+    background-image: url("../img/icons/close.svg");
+    width: 24px;
+    height: 24px;
   }
 
   @include m.tablet {
@@ -76,11 +78,19 @@
 }
 
 .header__nav {
-  display: flex;
+
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  display: none;
+
+  &--open {
+    display: flex;
+  }
 
   @include m.desktop {
+    position: static;
+    display: flex;
     flex-direction: row;
     gap: 0 33px;
   }
