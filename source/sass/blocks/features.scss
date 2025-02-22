@@ -79,7 +79,6 @@
   grid-template-rows: repeat(2, auto);
   gap: 8px;
   justify-items: start;
-
   border-radius: 20px;
   text-decoration: none;
   color: v.$basic-white;
@@ -101,6 +100,11 @@
 
   &--devices {
     background-color: v.$color-orange;
+  }
+
+  @include m.tablet {
+    min-height: 137px;
+    align-items: center;
   }
 
   @include m.desktop {
@@ -150,6 +154,7 @@
   height: auto;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  max-width: 100%;
 
   @include m.desktop {
     width: auto;

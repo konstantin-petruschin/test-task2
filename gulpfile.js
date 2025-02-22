@@ -17,11 +17,12 @@ export const styles = () => {
   return gulp.src('source/sass/style.scss', { sourcemaps: true })
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('source/css')) 
+    .pipe(rename('style.min.css'))
     .pipe(postcss([
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
